@@ -1,6 +1,8 @@
 import "./styles.css";
-// import Products from "./Products"; //1 dot for one folder out
-import Products from "./Products/Products";//2 dot for two folder out
+// import Products from "./Products"; //1 dot for one folder out/back
+//import Products from "./Products/Products";//
+import Products from "./Products";// becuase we have created index.js in each folder,its good practice
+
 export default function App() {
   return (
     <div className="App">
@@ -91,3 +93,197 @@ export default function App() {
 // by writing export in front of the thing that you are looking to export
 // export var x =10;
 // export function abc() {}
+
+
+//*************virtual DOM:- Imp interview question */
+
+//Example :-
+
+//        div
+//   ul          // button
+//li  li li li
+
+// function App() {
+
+//   return (
+//     <div>
+//       <ul id="ul" className="list">
+//         <li id="item-1"><a>Item 1</a></li>
+//         <li>Item 2</li>
+//         <li>Item 3</li>
+//         {show && <li>Item 4</li>}
+//       </ul>
+//       <button onClick={() => (!show)}>
+//         Toggle
+//       </button>
+//     </div>
+//   )
+// }
+// virtual dom
+// currentVDom
+
+// let currentVdom = {
+//   nodeName: 'div',
+//   children: [
+//     {
+//       nodeName: 'ul',
+//       properties: {
+//         className: 'list',
+//         children: [
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               id: 'item-1',
+//               children: [
+//                 {
+//                   nodeName: 'a',
+//                   children: ['Item 1']
+//                 }
+//               ]
+//             }
+//           },
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               children: [
+//                 'Item 2'
+//               ]
+//             }
+//           },
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               children: [
+//                 'Item 3'
+//               ]
+//             }
+//           }
+//         ]
+//       }
+//     },
+//     {
+//       nodeName: 'button',
+//       children: ['Toggle']
+//     }
+//   ]
+// }
+
+// let newVDom = {
+//   nodeName: 'div',
+//   children: [
+//     {
+//       nodeName: 'ul',
+//       properties: {
+//         className: 'list',
+//         children: [
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               id: 'item-1',
+//               children: [
+//                 {
+//                   nodeName: 'a',
+//                   children: ['Item 1']
+//                 }
+//               ]
+//             }
+//           },
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               children: [
+//                 'Item 2'
+//               ]
+//             }
+//           },
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               children: [
+//                 'Item 3'
+//               ]
+//             }
+//           },
+//           {
+//             nodeName: 'li',
+//             properties: {
+//               children: [
+//                 'Item 4'
+//               ]
+//             }
+//           }
+//         ]
+//       }
+//     },
+//     {
+//       nodeName: 'button',
+//       children: ['Toggle']
+//     }
+//   ]
+// }
+
+// diffing algo-->
+// newVdom - currentVdom =  changes
+//applyChanges(diff(newVdom, currentVdom))
+// add //           {
+//             nodeName: 'li',
+//             properties: {
+//               children: [
+//                 'Item 4'
+//               ]
+//             }
+//           }
+
+// oldDom = [
+//   <ProductCard title="Title 1" />,
+//   <ProductCard title="Title 2" />,
+//   <ProductCard title="Title 3" />
+// ]
+
+// newDom = [
+//   <ProductCard  title="Title 1" />,
+//   <ProductCard  title="Title 4" />,
+//   <ProductCard  title="Title 2" />,
+//   <ProductCard  title="Title 3" />
+// ]
+
+// change second card title to title 4
+// change product card title to title 2
+// add product card with title 3
+
+// oldDom = [
+//   <ProductCard key={1} title="Title 1" />,
+//   <ProductCard key={2} title="Title 2" />,
+//   <ProductCard key={3} title="Title 3" />
+// ]
+
+// newDom = [
+//   <ProductCard key={1}  title="Title 1" />,
+//   <ProductCard key={4}  title="Title 4" />,
+//   <ProductCard key={2}  title="Title 2" />,
+//   <ProductCard key={3}  title="Title 3" />
+// ]
+
+// add 4 with title 4 after key 1
+
+// oldDom = [
+//   <ProductCard key={1} title="Title 1" />,
+//   <ProductCard key={2} title="Title 2" />,
+//   <ProductCard key={3} title="Title 3" />
+// ]
+
+// newDom = [
+//   <ProductCard key={1}  title="Title 1" />,
+//   <ProductCard key={2}  title="Title 4" />,
+//   <ProductCard key={3}  title="Title 2" />,
+//   <ProductCard key={4}  title="Title 3" />
+// ]
+
+// change product card 2 with title 4
+// change product card 3 with title 2
+// add product card 4 with title 3
+
+
+
+
+//***************************************************** */
