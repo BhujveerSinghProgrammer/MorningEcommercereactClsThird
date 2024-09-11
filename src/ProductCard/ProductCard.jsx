@@ -10,6 +10,7 @@ import "./ProductCard.css"
 
 
 export default function ProductCard(props) {
+  console.log("child rerendered");
    return (
     <div className="card">
        <span> {props.product.title} </span>

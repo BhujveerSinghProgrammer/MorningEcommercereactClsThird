@@ -45,7 +45,6 @@ console.log("api call started");
      console.log("api call ended");
      }
   );
-
   return (
     <div>
        {gp.map((product) => {
@@ -83,7 +82,7 @@ console.log("api call started");
 
 // return [stateVar, setterFn]
 // setteFn() { setting and rerendering}
-
+//child will also get rerendered when parent renders using useState,child means productCard method and parent means products methods.
 
 // Custom hooks
 // system defined hooks
