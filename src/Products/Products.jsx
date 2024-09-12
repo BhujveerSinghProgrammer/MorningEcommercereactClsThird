@@ -23,7 +23,7 @@ function GetProductsApi(callback)
 {
   console.log("api called");
   setTimeout(() => {
-    callback(products); //we cant use return function in settimeout 
+    callback(products); //
   }, 1000); //mock delay of api which is 1000 mili second.
 }
 
@@ -55,6 +55,7 @@ console.log("api call started");
 }
 
 
+//Note:- check PracticalPractice.txt for the reference
 
 //frontend -> api -> backend
 // backend collects data and sends response to the frontend
@@ -75,7 +76,7 @@ console.log("api call started");
 // functions job would be do the repetitive stuff
 // known as hooks in react
 
-// useState - system defined hook
+// useState - system defined hook, to rerender again 
 // it is always named like this
 // useName
 // useState(default Value)
@@ -93,17 +94,22 @@ console.log("api call started");
 
 // understand how the child is getting rerendered
 // we will understand how to make this better
+
+//***************************************** */
 // loader in our code
 
 // useEffect hook
 // useEffect(fn, []);
 // I will call this callback function
 // everytime dependent on this dependency array
+//Note:- There are 3 things can be in dependency array
 // when there is no dependency array
-// where there is an empty dependency array
+// when there is an empty dependency array
 // when there is some value in this array
 // what can be passed in this dependency array
 // you can pass a state variable and you can pass a props from the parent which is a state variable
+
+//************************************** */
 
 // AJAX
 // fetch - ajax call with promises in order to get the data
