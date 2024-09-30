@@ -54,6 +54,3 @@ PS E:\SCLR\ReactJS\dumm> git remote -v
 origin  https://github.com/BhujveerSinghProgrammer/dummy.git (fetch)
 origin  https://github.com/BhujveerSinghProgrammer/dummy.git (push)
 PS E:\SCLR\ReactJS\dumm>
-
-
-3.
