@@ -1,8 +1,6 @@
+import {useState} from "react";//step 1  //its nameed export,multiple other things returning from react 
 
-// import ProductCard from "./ProductCard"; //1 dot for one folder out
-// import ProductCard from "../ProductCard/ProductCard"; //2 dot for two folder out
-import ProductCard from "../ProductCard"; //2 dot for two folder out
-
+import ProductCard from "../ProductCard";
 const products = [
   {
     id:1,
@@ -18,51 +16,109 @@ const products = [
     id:3,
     title: "Moto",
     price: "115000",
-  },
+  }
 ];
 
+function GetProductsApi(callback)
+{
+  console.log("api called");
+  setTimeout(() => {
+    callback(products); //
+  }, 1000); //mock delay of api which is 1000 mili second.
+}
+
+//Api call to get the data 
 export default function Products() {
+
+  // let gp=[];//state var
+    //useState(default Value) returns [stateVar, setterFn] thatswhy we are using let [gp,setGp]=useState([]);
+    let [gp,setGp]=useState([]); //step 2 useState(default Value),default value was empty array (let gp=[];)
+ //Note :- it returns return [stateVar, setterFn] (let [gp,setGp]),here gp was stateVar and we made setterFn=setGp
+
+console.log("api call started");
+
+ GetProductsApi(
+     function(resp)
+     {
+      setGp(resp) //step 3,it works like setGp(gp=resp and rerender() the function Products())
+     //gp=resp;
+     console.log("api call ended");
+     }
+  );
   return (
     <div>
-       {products.map((product) => {
-        // return <ProductCard product={product} key={product.title} />; //or
+       {gp.map((product) => {
         return <ProductCard product={product} key={product.id} />; 
-
-        //you can also pass the id as key
-         //,product.id from your json if exists in //your json.its good practice to use key in loop.
-         //its interview question why the key is important to used.
-         //its used in map and loop function ,key is a keyword here,used in order to diffrentiate between the diffrent component,so that i can use that key,its just a unique id.
       })}
-
-
-
-      {/* <ProductCard name="1" price="20" />
-      <ProductCard name="2" price="30" />
-      <ProductCard name="3" price="40" />
-      <ProductCard name="4" price="50" />  */}
-      {/* we are passing parameteres like this | */}
     </div>
   );
 }
 
-//what map functions does,its like for loop
-//map(fn(item,index))
 
-// Array.prototype.double = function () {
-//   return this.map((item) => item * 2);
-// };
+//Note:- check PracticalPractice.txt for the reference
 
-// var a = [1, 2, 3];
-// a.double(); //[2,4,6]
-// console.log(a.double());
+//frontend -> api -> backend
+// backend collects data and sends response to the frontend
 
-//Note:- Here we are using Array.prototype becoz we are manipulating array,
-//we use Object.Prototype when we edit object.
+// state variable in react
+// I am a special kind of varibale
+// whose value once set would cause a rerender of the component
+// it would persist the value of the var on every rerender
 
+// Mounting --> first time process go through like :- index.js => app.js => products.js => productCard.js
+// rendering
+// index.js => app.js => products.js => productCard.js
 
+// hooks in react
 
-//****Import */
-//how import works:- it checks first in a folder with given name like if we have given:-import ProductCard from "./ProductCard"
-// 1) first check ProductCard.js ,
-//2) if this's not reachable then it will check ProductCard/index.js file.
+// hooks in react are nothing but a helper function
+// repetitive stuff in react you could delegate that to a function
+// functions job would be do the repetitive stuff
+// known as hooks in react
+
+// useState - system defined hook, to rerender again 
+// it is always named like this
+// useName
+// useState(default Value)
+
+// return [stateVar, setterFn]
+// setteFn() { setting and rerendering}
+//child will also get rerendered when parent renders using useState,child means productCard method and parent means products methods.
+
+// Custom hooks
+// system defined hooks
+
+// hooks need to be at the top of the component
+// hooks can't be inside if conditions or for loops
+// hook can't be used in order to render a UI
+
+// understand how the child is getting rerendered
+// we will understand how to make this better
+
+//***************************************** */
+// loader in our code
+
+// useEffect hook
+// useEffect(fn, []);
+// I will call this callback function
+// everytime dependent on this dependency array
+//Note:- There are 3 things can be in dependency array
+// when there is no dependency array
+// when there is an empty dependency array
+// when there is some value in this array
+// what can be passed in this dependency array
+// you can pass a state variable and you can pass a props from the parent which is a state variable
+
+//************************************** */
+
+// AJAX
+// fetch - ajax call with promises in order to get the data
+// axios
+
+// the concept which we would want to learn the barebone structure of fetch
+// is AJAX
+
+// Asyn js and xml
+// client => ajax => server => api => returns data => client => renders
+
 
