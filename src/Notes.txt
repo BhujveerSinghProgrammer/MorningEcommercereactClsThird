@@ -1,4 +1,9 @@
-Q1:- //How to upload project to github from vs code.
+Q1:-How to create react app:-
+Ans:- Open VS Code-->Terminal-->go to folder (cd myapp)-->npm install create-react-app myapp
+-->npx create-react-app myapp  -->npm run start
+
+
+Q2:- //How to upload project to github from vs code.
 Step 1:-
 1.check for git version installed on your pc.
 C:\Users\USER>git -v
@@ -7,15 +12,16 @@ git version 2.46.2.windows.1
 Step:-2
 1.Open prject in vs code
 2.go to terminal-->git init
-3.git add. //add space after dot.
+3.git add . //add space after add.
 4.git commit -am "initial commit"
-5.git remote add origin https://github.com/BhujveerSinghProgrammer/useStateAnduseEffect.git
+5.git remote add origin https://github.com/BhujveerSinghProgrammer/dummy.git
 5.git push origin master
 
 
 …or create a new repository on the command line
-____________________________________________________________
+__//*********************************************************************************************//__________________________________________________________
 git init
+git add . //add space after add.
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/BhujveerSinghProgrammer/dummy.git
@@ -24,10 +30,30 @@ git push -u origin main
 
 …or push an existing repository from the command line
 ____________________________________________________________
-
+//*********************************************************************************************//
 git remote add origin https://github.com/BhujveerSinghProgrammer/dummy.git
 git branch -M main
 git push -u origin main
 
+//*********************************************************************************************//
 
 
+Q3:- important commands used in VS Code terminal:-
+1. remote url for github configuration:- 
+
+PS E:\SCLR\ReactJS\dumm> git remote -v
+origin  https://github.com/BhujveerSinghProgrammer/useStateAnduseEffect.git 
+(fetch)
+origin  https://github.com/BhujveerSinghProgrammer/useStateAnduseEffect.git 
+(push)
+
+2.how to update url for local github configuration:-
+
+PS E:\SCLR\ReactJS\dumm> git remote set-url origin https://github.com/BhujveerSinghProgrammer/dummy.git
+PS E:\SCLR\ReactJS\dumm> git remote -v
+origin  https://github.com/BhujveerSinghProgrammer/dummy.git (fetch)
+origin  https://github.com/BhujveerSinghProgrammer/dummy.git (push)
+PS E:\SCLR\ReactJS\dumm>
+
+
+3.
