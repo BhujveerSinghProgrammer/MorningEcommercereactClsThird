@@ -55,9 +55,12 @@ Q12.How to upload project to new branch on github?
 Ans:- Go to source control in vs code-->source control repository-->create new branch-->then publish
 
 
+Q13.How to fetch/clone particular branch from github?
+Ans:- Rc on a folder-->Open Git Bash Here-->$ git clone -b Fifth https://github.com/BhujveerSinghProgrammer/MorningEcommercereactClsThird.git
 
 
-Q2:- //How to upload project to github from vs code.
+
+Q14:- //How to upload project to github from vs code.
 Step 1:-
 1.check for git version installed on your pc.
 C:\Users\USER>git -v

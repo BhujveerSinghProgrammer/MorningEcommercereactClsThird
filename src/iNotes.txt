@@ -1,12 +1,11 @@
-Q1:- //How to upload project to github from vs code.
-1.Open prject in vs code
-2.go to terminal-->git init
-3.git add. //add space after dot.
-4.git commit -am "initial commit"
-5.git remote add origin https://github.com/BhujveerSinghProgrammer/useStateAnduseEffect.git
-5.git push origin master
-6.
+Important:Q1.usestate variable and useEffect.
+Ans:- useState:- its used to keep maintaining previous state and the current state values,and also it will have an rerender function call,calling rernder again and again whenever the state has changed.when state variable is set it rerendered again.without useEffect it rerendered one extra time.
+one is for mounting and filling state variable and second is for comparing last state variable value and terminate with rerendered,this rerendered is extra rerender.
 
+
+
+But using useEffect:-it checks dependency based on some value and then go ahead,so useEffect checks helps to control one extra rerender. so control rerender based on some value then we will use useEffect.
+actually it terminates with setGp,code doesnt go ahead, function doesnt rerender.[but using useState kit terminates the function but after setGp function ,it goes to rerender,thats the extra rerender,it can be prevented by useEffect functionalities. ]
 
 
 
